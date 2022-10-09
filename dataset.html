@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Green Verge Project | University of Lincoln</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title"></span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="project_summary.html">Project Introduction</a></li>
+							<li><a href="dataset.html">Dataset and Annotations</a></li>
+							<li><a href="deep_learning.html">Object Detection Model</a></li>
+							<li><a href="mapping.html">Mapping</a></li>
+							<li><a href="future.html">Future Work</a></li>
+							<li><a href="about.html">About Us / Contact</a></li>
+			
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2>Dataset and Annotations</h2>
+							<span class="image main"><img src="images/dataset_banner.jpg" alt="" /></span>
+							<h2>Footage Collection</h2>
+							<p> To collect Dashcam video footage we used a <a href="https://www.amazon.com/dp/B09FJRP89C?pd_rd_i=B09FJRP89C&pf_rd_p=0dbc84ae-1906-4847-bb12-63cd0859e641&pf_rd_r=WHSKDPR4FPFEWPF1Y30Q&pd_rd_wg=F8v6m&pd_rd_w=HtRma&pd_rd_r=461a3e58-bc44-4fa4-8faf-a73a1f1653d7">WOLFBOX 4K GPS enabled dashcam.</a>
+								Dashcam footage was collected in Lincolnshire, and the surrounding areas, between February and April. In total, around 35 hours of driving footage was captured in a range of lighting and weather conditions. While the dashcam footage was captured at a resolution of 4K (3840 x 2160 px), it was 
+								found the downsampling the footage to 1K (960 x 540 px) allowed for much more efficient processing. Both the 4K and 2K downsampled footage are stored on our secure cloud storage.
+							</p>
+						
+							<h2>Frame Annotation</h2>
+							<p> After an extensive evaluation process, we opted for the CVAT open source annotation tool developed by Intel. 
+								We found the software to be efficient and versatile for our needs, including features like bounding box interpolation through a number of frames.
+
+
+							</p>
+ 
+							<p>In total, our dataset collected so far consists of 8997 frames (constructed as a subset of the 35 hours of total footage captured). The size of our dataset is compared to other related work in Figure 2. With augmentation techniques, we increase the size of the training dataset to 15,065 frames and include domain specific inductive bias (e.g. vehicle motion blur), without the costly need of annotating further frames.</p>
+
+							<p style="text-align:center;"><img src="images/fig_2.png" alt="Annoated_Fram_Stats" width="55%"></p>
+
+							<p>
+								
+								When annotating raw dashcam video, there may be many frames that do not contain annotations. 
+
+								In the case of the object detector, these empty frames are redundant as it will not learn much information from them with regards to classes and position. </p>
+								CVAT outputs two things: 
+								<uo>
+								<li>All the frames in the imported video (Including those without litter) </li>
+								<li>Json annotations file (Includes references to empty frames). </li>
+								</uo>
+								
+								<br>
+								
+								<p>
+								
+								CVATHelpers was created to filter frames and annotations.CVATHelpers has separate functions for filtering json and frames, and ‘reduceCVAT’ which accomplishes both at the same time. 
+								However, the solution only works on annotations in COCO format. 
+						
+								
+							</p>
+							<br>
+							<p style="text-align:center;"><a href="https://github.com/Green-Verges-University-of-Lincoln/CVATHelpers" class="button primary small" > CVATHelpers Github Repo</a></p>
+							<h2>Dataset Access</h2>
+							<p> We host our data on Microsoft Onedrive. Access to the data used in this project, including driving footage and object annotations, may be possible; please contact us using the email address provided at the bottom of this page
+								to discuss. If access is granted, you can use the link below (along with the key provided) to access our data repository.</p>
+							<p style="text-align:center;"><a href="https://universityoflincoln-my.sharepoint.com/:f:/g/personal/25862832_students_lincoln_ac_uk/EpZljTFcDEpCspZL-k9p-n4BbLf5nKFnjL0ZopGa014Xzg?e=vGc2LU" class="button primary small">Access Dataset</a></p>
+						</div>
+					</div>
+
+					<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; Green Verge Project | University of Lincoln. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP.</a>
+								</a></li>
+							</ul>
+					
+					</footer>
+
+			
+  
+
+  
+  
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
